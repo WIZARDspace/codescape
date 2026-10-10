@@ -160,6 +160,11 @@ The scan covers tracked source, docs and config (`git ls-files`). It skips
 lockfiles, bundles, minified files, files over 20k lines, and files whose
 average line is over 240 characters.
 
+The tour visits the four largest top-level directories, largest first, with a
+low pass over the first, and reads the longest source file in the first two.
+A repository with no directories reads its longest file. flop-core keeps its
+own hand-written tour.
+
 ## Recording
 
 `--record DIR` runs the tour at a fixed step (`--record-fps`, default 30). It
